@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: autoscaler
+  namespace: teastore
+spec:
+  replicas: 1
+  revisionHistoryLimit: 1
+  selector:
+    matchLabels:
+      app: teastore
+  template:
+    metadata:
+      annotations:
+        linkerd.io/inject: enabled
+      labels:
+        app: teastore
+      namespace: teastore
+    spec:
+      containers:
+        - image: angi2412/autoscaler
+          imagePullPolicy: IfNotPresent
+          name: autoscaler
+      restartPolicy: Always

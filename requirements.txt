@@ -1,0 +1,15 @@
+numpy
+pandas
+matplotlib
+seaborn
+locust
+requests
+docker
+kubernetes
+joblib
+scikit-learn
+scikit-criteria
+tensorflow
+keras
+pyyaml
+python-dotenv
